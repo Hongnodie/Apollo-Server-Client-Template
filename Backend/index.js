@@ -1,4 +1,4 @@
-// PREDEFINED DATABASE (NO INTERACTION) SERVER
+// ADD DATABASE (NO INTERACTION) SERVER (MongoDB)
 // 0-BEFORE ALL, INIT THE PROGRAMME WITH COMMAND: "npm init -y"
 
 // DEPENDENCIES INCLUDE - apollo-server, graphql
@@ -15,6 +15,7 @@ const typeDefs = gql`
 
     type User {
         _id: String!
+        selfid: String!
         username: String!
     }
 
@@ -24,32 +25,71 @@ const typeDefs = gql`
     }
 `;
 
-// 2.2-DEFINE SOME DATASET
-const users = [
-    { _id: 'idforuser1', username: 'user1' },
-    { _id: 'idforuser2', username: 'user2' }
-];
+// 2.2-DEFINE SOME DATASET - BUT HERE WE INTRODUCE IT INTO MONGODB
+// TARGET IS TO BRING THE DATA TO THE CLOUD
+// Since _id is a special term in mongoDB and not self defined, "_id" is renamed as "selfid"
+// const users = [
+//     { selfid: 'idforuser1', username: 'user1' },
+//     { selfid: 'idforuser2', username: 'user2' }
+// ];
+// MongoDB requires that to use a model, we need to scheme it first, guide here https://mongoosejs.com/docs/guide.html
 
-// 3-EXPLAIN/DEFINE HOW FUNCTION WORKS
-// 3.1-SCHEME DATABASE FIRST - NEGLECTED HERE
+// 2.2.1-SCHEME DATABASE FIRST (Same as what you tell to the apollo server in above)
 // Example by mongodb official guidebook at https://mongoosejs.com/docs/guide.html#definition
+// OF COURSE INSTALL "mongoose" npm package with command "npm i mongoose"
+const mongoose = require('mongoose');
+// MULTIPLE WAYS OF CALLING FOR "SCHEMA" AVAILABLE: mongoose.Schema() OR {Schema}=mongoose + Schema() as suggested here https://mongoosejs.com/docs/schematypes.html#objectids
+const userSchema = new mongoose.Schema({
+    // Details of various type definition see https://mongoosejs.com/docs/schematypes.html
+    // TODO: gives full list of available types accepted by mongoDB
+    selfid: {  
+        type: String, 
+        required: true,
+        unique: true,
+    },
+    username: {
+        type: String,
+        default: undefined,
+        alias: "nameOfUser",
+    },
+})
+
+// 2.2.2-FILL SCHEMA TO THE MODEL
+// "User" is going to be the name in mongoDB cloud
+const userModel = mongoose.model('User', userSchema);
+// After this, mongoDB is operatable by calling for "userModel"(self-named)
+
+// 2.2.3-SEND LOCAL MODEL TO THE CLOUD DATABASE SERVER AND STAY CONNECTED
+// Example by mongoose official guidebook at https://mongoosejs.com/docs/migrating_to_6.html#no-more-deprecation-warning-options
+// Name database(db)  as "apollo-template"
+mongoose
+    .connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/apollo-template', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    // 2.2.4-SEED THE CLOUD DATABASE
+    // Terminology "seed" means put data (requires to be json object) to the place where you try to find it
+    .then( async () => {
+        // since unique is true delete all the existing data to avoid err
+        // Full list of query found here https://mongoosejs.com/docs/api/query.html
+        await userModel.deleteMany({});
+        
+        const userSavedResponse = await userModel.insertMany([
+            { selfid: 'idforuser1', username: 'user1' },
+            { selfid: 'idforuser2', username: 'user2' }
+        ]);
+        // console.log(userSavedResponse);
+    });
 
 // 2.3-DEFINE WHAT ACTION IS EACH NAMED FUNCTION EXACTLY DOING
+// Tell the resolver to find the data from cloud database
 const resolvers = {
     Query: {
-        allUser: () => users,
+        allUser: async () => {
+            return userModel.find({});
+        },
     },
 };
-
-// UPDATE SELF-DEFINED SCHEMA TO THE CLOUD DATABASE SERVER AND STAY CONNECTED
-// Example by mongoose official guidebook at https://mongoosejs.com/docs/migrating_to_6.html#no-more-deprecation-warning-options
-// const mongoose = require('mongoose');
-
-// BY DEFAULT DATABASE(DB) NAMED AS "apollo-template"
-// const db = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/apollo-template', {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// });
 
 // 3-START THE SERVER
 // 3.1-INTRODUCE THE PREREQUISITE FOR GQL SERVER
