@@ -34,7 +34,7 @@
   [See basic apollo code package at Github](https://github.com/Hongnodie/Apollo-Server-Client-Template.git)
   ## Installation
 
-  All necessary code are in a single file: "Backend" Folder "index.js" file [Go to index.js](https://github.com/Hongnodie/Apollo-Server-Client-Template/blob/main/Backend/index.js)
+  All necessary code are in a single file: "Backend" Folder "index.js" file [Go to index.js](https://github.com/Hongnodie/Apollo-Server-Client-Template/blob/Online-database-(MongoDB)/Backend/index.js)
 
   All commands to run in the terminal (or alias "Shell") are summed up here
 
