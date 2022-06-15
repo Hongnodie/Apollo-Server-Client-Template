@@ -1,8 +1,9 @@
 // PREDEFINED DATABASE (NO INTERACTION) SERVER
 // 0-BEFORE ALL, INIT THE PROGRAMME WITH COMMAND: "npm init -y"
 
-// DEPENDENCIES INCLUDE - express, apollo-server-express, path (this one is optional)
-// 1-RUN COMMAND: "npm i apollo-server"
+// DEPENDENCIES INCLUDE - apollo-server, graphql
+// INSTRUCTION GIVEN HERE: https://www.apollographql.com/docs/apollo-server/getting-started#step-2-install-dependencies
+// 1-RUN COMMAND: "npm install apollo-server graphql"
 const { ApolloServer, gql } = require('apollo-server');
 
 // 2-APOLLO SETUP
@@ -49,7 +50,6 @@ const resolvers = {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
 // });
-
 
 // 3-START THE SERVER
 // 3.1-INTRODUCE THE PREREQUISITE FOR GQL SERVER
