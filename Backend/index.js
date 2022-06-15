@@ -60,11 +60,11 @@ const server = new ApolloServer({
 });
 
 // 3.2-START THE SERVER
-// RUN COMMAND: "node index.js"
+// RUN COMMAND: "node index.js" (STOP BY USING "Ctrl"+"C" THEN RESPOND "y", ENTER)
 server
     .listen()
-    .then(({ url }) => {
-        console.log(`🚀  Server ready at ${url}`);
-    });
+    .then(({ url }) => { console.log(` Server ready at ${url}`); });
+    // CAN CHECK INTERMINAL WHAT PARAMS RETURNED FROM SERVER BY COMMENTING THE ABOVE AND UN-COMMENT THE FOLLOWING LINE
+    // .then((res) => { console.log(res); });
 
  
