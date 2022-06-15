@@ -1,6 +1,6 @@
-  # Apollo-Server-Client-Template
+  # Apollo-Server-Client-Template (with MongoDB)
 
-  Build up an apollo server plus clients template for future app development and other useage 
+  MongoDB connected, so that data are saved to and re-called from the cloud database(alais "DB") server 
 
   ## Table of Contents
 
@@ -17,11 +17,21 @@
 
   ## Screenshot
 
+  [Check out the content](https://github.com/Hongnodie/Apollo-Server-Client-Template/tree/Online-database-(MongoDB))
+
   <p align="center">
-    <img src="./Readme/Apollo server run check.png" width="100%">
+    <img src="./Readme/Apollo server run check(MongoDB).png" width="100%">
+  </p>
+
+  <p align="center">
+    <img src="./Readme/MongoDB connect change1.png" width="100%">
+  </p>
+
+  <p align="center">
+    <img src="./Readme/MongoDB connect add1.png" width="100%">
   </p>
   
-  [See code package at Github](https://github.com/Hongnodie/Apollo-Server-Client-Template.git)
+  [See basic apollo code package at Github](https://github.com/Hongnodie/Apollo-Server-Client-Template.git)
   ## Installation
 
   All necessary code are in a single file: "Backend" Folder "index.js" file [Go to index.js](https://github.com/Hongnodie/Apollo-Server-Client-Template/blob/main/Backend/index.js)
@@ -29,7 +39,7 @@
   All commands to run in the terminal (or alias "Shell") are summed up here
 
   ```
-  npm install apollo-server graphql
+  npm install apollo-server graphql mongoose
   node index.js
   ```
 
@@ -39,7 +49,11 @@
   <summary>All included documentation</summary>
   <br>
 
-  Apollo Server-(https://www.apollographql.com/docs/apollo-server/getting-started#step-2-install-dependencies) - build up a simple server with nothing else
+  Apollo Server-(https://www.apollographql.com/docs/apollo-server/integrations/middleware#example) - build up a simple server
+
+  MongoDB Server-(https://cloud.mongodb.com/) - This is where data are saved and checked
+
+  Mongoose npm package-(https://mongoosejs.com/docs/index.html) - the tool to utilize mongoDB cloud server
 
   </details>
   
