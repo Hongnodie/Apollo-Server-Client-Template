@@ -30,10 +30,6 @@ const users = [
     { _id: 'idforuser2', username: 'user2' }
 ];
 
-// 3-EXPLAIN/DEFINE HOW FUNCTION WORKS
-// 3.1-SCHEME DATABASE FIRST - NEGLECTED HERE
-// Example by mongodb official guidebook at https://mongoosejs.com/docs/guide.html#definition
-
 // 2.3-DEFINE WHAT ACTION IS EACH NAMED FUNCTION EXACTLY DOING
 const resolvers = {
     Query: {
