@@ -24,7 +24,7 @@
   
   [See code package at Github](https://github.com/Hongnodie/Apollo-Server-Client-Template.git)
 
-  ## Screenshot
+  ## Needs
 
   Different needs can be found as of branches:
 
