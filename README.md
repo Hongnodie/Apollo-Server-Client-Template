@@ -1,6 +1,9 @@
-  # Apollo-Server-Client-Template (with MongoDB)
+  # Apollo-Server-Express-Template (MongoDB & Express)
 
-  MongoDB connected, so that data are saved to and re-called from the cloud database(alais "DB") server 
+  Feature 1: <br>
+  MongoDB connected, so that data are saved to and re-called from the cloud database(alais "DB") server <br>
+  Feature 2: <br>
+  Express oriented - which means use <span>express npm package</span> plus <span>apollo-server-express</span> (additional freedom in self defining some connection configuration)
 
   ## Table of Contents
 
@@ -53,11 +56,15 @@
   <summary>All included documentation</summary>
   <br>
 
-  Apollo Server-(https://www.apollographql.com/docs/apollo-server/integrations/middleware#example) - build up a simple server
+  Check out package difference-(https://www.apollographql.com/docs/apollo-server/integrations/middleware)
+
+  Apollo Server Express Quick Start-(https://www.apollographql.com/docs/apollo-server/integrations/middleware#apollo-server-express) - Switch from "apollo server" to "apollo-server-express"
 
   MongoDB Server-(https://cloud.mongodb.com/) - This is where data are saved and checked
 
   Mongoose npm package-(https://mongoosejs.com/docs/index.html) - the tool to utilize mongoDB cloud server
+
+  Quick start for express-(http://expressjs.com/en/starter/hello-world.html) - All basic component you need to know are well confined here
 
   </details>
   
