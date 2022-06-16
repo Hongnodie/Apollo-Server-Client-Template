@@ -3,7 +3,7 @@
   Feature 1: <br>
   MongoDB connected, so that data are saved to and re-called from the cloud database(alais "DB") server <br>
   Feature 2: <br>
-  Express oriented - which means use <span>express npm package</span> plus <span>apollo-server-express</span> (additional freedom in self defining some connection configuration)
+  Express oriented - which means use <strong>express npm package</strong> plus <strong>apollo-server-express</strong> (additional freedom in self defining some connection configuration)
 
   ## Table of Contents
 
