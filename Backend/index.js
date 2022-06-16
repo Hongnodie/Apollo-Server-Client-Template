@@ -32,7 +32,7 @@ const typeDefs = gql`
 //     { selfid: 'idforuser1', username: 'user1' },
 //     { selfid: 'idforuser2', username: 'user2' }
 // ];
-// MongoDB requires that to use a model, we need to scheme it first, guide here https://mongoosejs.com/docs/guide.html
+// MongoDB requires that we need to scheme it first beforing using a model, guide here https://mongoosejs.com/docs/guide.html
 
 // 2.2.1-SCHEME DATABASE FIRST (Same as what you tell to the apollo server in above)
 // Example by mongodb official guidebook at https://mongoosejs.com/docs/guide.html#definition
