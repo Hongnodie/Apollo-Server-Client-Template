@@ -20,7 +20,7 @@
 
   ## Screenshot
 
-  [Check out the content](https://github.com/Hongnodie/Apollo-Server-Client-Template/tree/Online-database-(MongoDB))
+  [Check out the content](https://github.com/Hongnodie/Apollo-Server-Client-Template/tree/MongoDB-Cloud-%26-Express-(npm))
 
   <p align="center">
     <img src="./Readme/Apollo server run check(MongoDB).png" width="100%">
