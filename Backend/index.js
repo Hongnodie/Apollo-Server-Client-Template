@@ -1,10 +1,10 @@
 // ADD DATABASE (NO INTERACTION) SERVER (MongoDB)
 // 0-BEFORE ALL, INIT THE PROGRAMME WITH COMMAND: "npm init -y"
 
-// DEPENDENCIES INCLUDE - apollo-server, graphql
-// INSTRUCTION GIVEN HERE: https://www.apollographql.com/docs/apollo-server/getting-started#step-2-install-dependencies
-// 1-RUN COMMAND: "npm install apollo-server graphql"
-const { ApolloServer, gql } = require('apollo-server');
+// DEPENDENCIES INCLUDE - graphql, mongoose, express, apollo-server-express (and be sure to remove apollo-server due to conflict)
+// INSTRUCTION GIVEN HERE: https://www.apollographql.com/docs/apollo-server/integrations/middleware/#swapping-out-apollo-server
+// 1-RUN COMMAND: (optional) "npm uninstall apollo-server" and "npm install apollo-server-express graphql" 
+const { ApolloServer, gql } = require('apollo-server-express');
 
 // 2-APOLLO SETUP
 // Example by apollo official guidebook at https://www.apollographql.com/docs/apollo-server/getting-started/#step-3-define-your-graphql-schema
