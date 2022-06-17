@@ -35,6 +35,10 @@
   <p align="center">
     <img src="./Readme/Express-work1.png" width="100%">
   </p>
+
+  <p align="center">
+    <img src="./Readme/Express-work2-mutation.png" width="100%">
+  </p>
   
   [See basic apollo code package at Github](https://github.com/Hongnodie/Apollo-Server-Client-Template.git)
   ## Installation

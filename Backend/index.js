@@ -20,8 +20,14 @@ const typeDefs = gql`
     }
 
     #   "Query" is a special term in gql as it defines <function name>(accepted variables) : <return object example> -- alias as "context"
+    #   "[User]" tells apollo that the return value is [ one or multiple instance of User ]
     type Query {
         allUser: [User]
+    }
+
+    #   "Mutation" is also special as it creates <function name>(accepted variables: types) : <return object>
+    type Mutation {
+        changeUsernameBySelfid(selfid: String!, newUsername: String!): User
     }
 `;
 
@@ -89,6 +95,12 @@ const resolvers = {
             return userModel.find({});
         },
     },
+    Mutation: {
+        changeUsernameBySelfid: async (parent, { selfid, newUsername }) => {
+          const changedUsername = await userModel.findOneAndUpdate({selfid}, {$set: {username: newUsername}}, { new: true });
+          return changedUsername;
+        },
+    }
 };
 
 // 3-START THE SERVER
