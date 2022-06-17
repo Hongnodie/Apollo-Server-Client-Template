@@ -1,11 +1,6 @@
-  # Apollo-Server-Express-Template (MongoDB & Express)
+  # Apollo-Server-Express-Template (MongoDB & Express & React)
 
-  *Note that: <strong>apollo-server is not compatible with apollo-server-express</strong>
-
-  Feature 1: <br>
-  MongoDB connected, so that data are saved to and re-called from the cloud database(alais "DB") server <br>
-  Feature 2: <br>
-  Express oriented - which means use <strong>express npm package</strong> plus <strong>apollo-server-express</strong> (additional freedom in self defining some connection configuration) <br>
+  <strong>Frontend: React & Backend: Apollo & Express</strong>
 
   ## Table of Contents
 
@@ -13,9 +8,9 @@
 
   * [Backend](#backend)
   * [Backend-Screenshot](#backend-screenshot)
-  * [Installation](#installation)
   * [Frontend](#frontend)
   * [Frontend-Screenshot](#frontend-screenshot)
+  * [Full-Installation](#installation)
   * [Guidebook](#guidebook)
   * [License](#license)
   * [Contributing](#contributing)
@@ -45,17 +40,6 @@
   </p>
   
   [See basic apollo code package at Github](https://github.com/Hongnodie/Apollo-Server-Client-Template.git)
-  ### Installation
-
-  All necessary code are in a single file: "Backend" Folder "index.js" file [Go to index.js](https://github.com/Hongnodie/Apollo-Server-Client-Template/blob/MongoDB-Cloud-%26-Express-(npm)/Backend/index.js)
-
-  All commands to run in the terminal (or alias "Shell") are summed up here
-
-  ```
-  npm install apollo-server-express graphql mongoose express
-  node index.js
-  ```
-
 
   ##  Frontend
   ### Frontend-Screenshot
@@ -63,6 +47,18 @@
   <p align="center">
     <img src="./Readme/Express-change1.png" width="100%">
   </p>
+
+  ### Installation
+
+  As for Backend <br>
+  All necessary code are in a single file: "Backend" Folder "index.js" file [Go to index.js](https://github.com/Hongnodie/Apollo-Server-Client-Template/blob/MongoDB-Cloud-%26-Express-(npm)/Backend/index.js)
+
+  All commands to run for backend (in the terminal) (or alias "Shell") are summed up here
+
+  ```
+  npm install apollo-server-express graphql mongoose express
+  node index.js
+  ```
 
   ### Guidebook
 
