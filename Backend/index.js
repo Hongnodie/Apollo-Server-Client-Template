@@ -1,7 +1,7 @@
-// ADD DATABASE (NO INTERACTION) SERVER (MongoDB)
+// DATABASE (NO INTERACTION) CLOUD SERVER (MongoDB) PLUS(&) EXPRESS (NPM)
 // 0-BEFORE ALL, INIT THE PROGRAMME WITH COMMAND: "npm init -y"
 
-// DEPENDENCIES INCLUDE - graphql, mongoose, express, apollo-server-express (and be sure to remove apollo-server due to conflict)
+// DEPENDENCIES INCLUDE - graphql, mongoose, express, apollo-server-express (and be sure to remove apollo-server due to suggested conflict)
 // INSTRUCTION GIVEN HERE: https://www.apollographql.com/docs/apollo-server/integrations/middleware/#swapping-out-apollo-server
 // 1-RUN COMMAND: (optional) "npm uninstall apollo-server" and "npm install apollo-server-express graphql" 
 const { ApolloServer, gql } = require('apollo-server-express');
@@ -99,12 +99,37 @@ const server = new ApolloServer({
   csrfPrevention: true,
 });
 
-// 3.2-START THE SERVER
-// RUN COMMAND: "node index.js" (STOP BY USING "Ctrl"+"C" THEN RESPOND "y", ENTER)
-server
-    .listen()
-    .then(({ url }) => { console.log(` Server ready at ${url}`); });
-    // CAN CHECK INTERMINAL WHAT PARAMS RETURNED FROM SERVER BY COMMENTING THE ABOVE AND UN-COMMENT THE FOLLOWING LINE
-    // .then((res) => { console.log(res); });
+// 3.2-INTRODUCE EXPRESS
+// 3.2.1-Introduce the npm with COMMAND "npm i express"
+const express = require('express');
+const app = express();
+// 3.2.2-Include any middleware (e.g extension that applies before express routing to enable specific purpose like using res.params/body or parsing json header)
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+// 3.2.3-Define routing
+app.get('/', (req, res) => {
+    console.log("Oh the routing is working");
+  });
+
+// 3.3-START THE SERVER
+// 3.3.1-Make sure to await server start first then the followings
+// Example given here (focus on the last few lines of code) https://www.apollographql.com/docs/apollo-server/integrations/middleware/#example
+const startApolloServer = async () => {
+    await server.start();
+    server.applyMiddleware({ app });
+
+    // Setup the opening gate (define that by default 3001)
+    const PORT = process.env.PORT || 3001;
+    // if no need for seeding in 2.2.3, mongoDB connection is put here and wrap the below like this: .then(()=>{app.listen(...)}) 
+    // Activate the service "listen" to the request should be the last step
+    app.listen(PORT, () => {
+        // console.log(server);
+        console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+      })
+}
+// 3.3.2-Call the async function to start the server
+startApolloServer();
+
+// RUN COMMAND: "node index.js" (STOP BY USING "Ctrl"+"C" THEN RESPOND "y", ENTER) to start
 
  
