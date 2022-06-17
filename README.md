@@ -12,7 +12,7 @@
   ***
 
   * [Backend](#backend)
-  &ensp; * [Backend-Screenshot](#backend-screenshot)
+  * &ensp; [Backend-Screenshot](#backend-screenshot)
   &ensp; * [Installation](#installation)
   * [Frontend](#frontend)
   &ensp; * [Frontend-Screenshot](#frontend-screenshot)
