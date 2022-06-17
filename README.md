@@ -12,7 +12,7 @@
   ***
 
   * [Backend](#backend)
-  * &ensp; [Backend-Screenshot](#backend-screenshot)
+  ** &ensp; [Backend-Screenshot](#backend-screenshot)
   &ensp; * [Installation](#installation)
   * [Frontend](#frontend)
   &ensp; * [Frontend-Screenshot](#frontend-screenshot)
@@ -79,6 +79,14 @@
   Mongoose npm package-(https://mongoosejs.com/docs/index.html) - the tool to utilize mongoDB cloud server
 
   Quick start for express-(http://expressjs.com/en/starter/hello-world.html) - All basic component you need to know are well confined here
+
+  </details>
+
+  <details>
+  <summary>Readme edit guide</summary>
+  <br>
+
+  Component sample list-(https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md)
 
   </details>
   
