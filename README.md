@@ -1,11 +1,12 @@
   # Apollo-Server-Express-Template (MongoDB & Express)
 
+  *Note that: <strong>apollo-server is not compatible with apollo-server-express</strong>
+
   Feature 1: <br>
   MongoDB connected, so that data are saved to and re-called from the cloud database(alais "DB") server <br>
   Feature 2: <br>
   Express oriented - which means use <strong>express npm package</strong> plus <strong>apollo-server-express</strong> (additional freedom in self defining some connection configuration) <br>
 
-  *Note that:<strong>apollo-server is not compatible with apollo-server-express</strong>
   ## Table of Contents
 
   ***
@@ -24,7 +25,7 @@
   [Check out the content](https://github.com/Hongnodie/Apollo-Server-Client-Template/tree/MongoDB-Cloud-%26-Express-(npm))
 
   <p align="center">
-    <img src="./Readme/Apollo server run check(MongoDB).png" width="100%">
+    <img src="./Readme/Express-change1.png" width="100%">
   </p>
 
   <p align="center">
