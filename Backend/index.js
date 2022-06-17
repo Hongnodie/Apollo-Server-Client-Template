@@ -26,6 +26,7 @@ const typeDefs = gql`
     }
 
     #   "Mutation" is also special as it creates <function name>(accepted variables: types) : <return object>
+    #   "$" in apollo indicate variable, detail at https://www.apollographql.com/tutorials/lift-off-part3/query-building-in-apollo-studio
     type Mutation {
         changeUsernameBySelfid(selfid: String!, newUsername: String!): User
     }
@@ -89,6 +90,7 @@ mongoose
 
 // 2.3-DEFINE WHAT ACTION IS EACH NAMED FUNCTION EXACTLY DOING
 // Tell the resolver to find the data from cloud database
+// List of operators (e.g. "$set") for mongoDB given here https://www.mongodb.com/docs/manual/reference/operator/update/
 const resolvers = {
     Query: {
         allUser: async () => {
@@ -96,8 +98,8 @@ const resolvers = {
         },
     },
     Mutation: {
-        changeUsernameBySelfid: async (parent, { selfid, newUsername }) => {
-          const changedUsername = await userModel.findOneAndUpdate({selfid}, {$set: {username: newUsername}}, { new: true });
+        changeUsernameBySelfid: async ( parent, { selfid, newUsername }) => {
+          const changedUsername = await userModel.findOneAndUpdate({ selfid }, { $set: { username: newUsername } }, { new: true });
           return changedUsername;
         },
     }
