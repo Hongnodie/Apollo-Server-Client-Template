@@ -1,6 +1,6 @@
   # Apollo-Server-Express-Template (MongoDB & Express & React)
 
-  <strong>Frontend: React & Backend: Apollo & Express</strong>
+  <strong>Frontend: React & Backend: Apollo & Express & Database: MongoDB</strong>
 
   ## Table of Contents
 
@@ -53,7 +53,7 @@
   As for Backend <br>
 
   All necessary code are in a single file: "Backend" Folder "index.js" file [Go to index.js](https://github.com/Hongnodie/Apollo-Server-Client-Template/blob/MongoDB-Cloud-%26-Express-(npm)/Backend/index.js)
-  
+
   All commands to run for backend (in the terminal) (or alias "Shell") are summed up here
   ```
   npm install apollo-server-express graphql mongoose express
