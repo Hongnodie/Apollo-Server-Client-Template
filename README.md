@@ -14,8 +14,6 @@
   * [Backend](#backend)
   * [Backend-Screenshot](#backend-screenshot)
   * [Installation](#installation)
-  * [Frontend](#frontend)
-  * [Frontend-Screenshot](#frontend-screenshot)
   * [Guidebook](#guidebook)
   * [License](#license)
   * [Contributing](#contributing)
@@ -24,6 +22,9 @@
   ***
 
   ##  Backend
+
+  Backend only
+
   ### Backend-Screenshot
 
   [Check out the content](https://github.com/Hongnodie/Apollo-Server-Client-Template/tree/MongoDB-Cloud-%26-Express-(npm))
@@ -55,14 +56,6 @@
   npm install apollo-server-express graphql mongoose express
   node index.js
   ```
-
-
-  ##  Frontend
-  ### Frontend-Screenshot
-
-  <p align="center">
-    <img src="./Readme/Express-change1.png" width="100%">
-  </p>
 
   ### Guidebook
 
