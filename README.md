@@ -44,7 +44,7 @@
   All commands to run in the terminal (or alias "Shell") are summed up here
 
   ```
-  npm install apollo-server graphql mongoose
+  npm install apollo-server-express graphql mongoose express
   node index.js
   ```
 
