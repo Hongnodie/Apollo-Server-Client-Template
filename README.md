@@ -12,10 +12,10 @@
   ***
 
   * [Backend](#backend)
-  * [Backend-Screenshot](#backend-screenshot)
-  * [Installation](#installation)
+  \t [Backend-Screenshot](#backend-screenshot)
+  \t [Installation](#installation)
   * [Frontend](#frontend)
-  * [Frontend-Screenshot](#frontend-screenshot)
+  \t [Frontend-Screenshot](#frontend-screenshot)
   * [Guidebook](#guidebook)
   * [License](#license)
   * [Contributing](#contributing)
