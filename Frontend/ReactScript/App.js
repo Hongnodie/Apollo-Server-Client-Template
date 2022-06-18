@@ -11,7 +11,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-// 2.1.2-Children block with return value introduce
+// 2.1.2-Children block with return value introduced
 import UnitReactBlock from "./components/UnitReactBlock";
 import OtherRouteBlock from "./components/OtherRouteBlock";
 
