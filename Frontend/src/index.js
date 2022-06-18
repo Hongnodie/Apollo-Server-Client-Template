@@ -73,9 +73,9 @@ function App() {
       <ApolloProvider client={client}>
         <BrowserRouter>
           <div className="waterflow1">
-              <p>Tier1 (BrowserRouter) Wrapper of react waterflow</p>
+              <div>Tier1 (BrowserRouter) Wrapper of react waterflow</div>
               <Routes>
-                <p>Tier2 (Routes) Wrapper of react</p>
+                <div>Tier2 (Routes) Wrapper of react</div>
                   <Route 
                   path="/" 
                   element={<UnitReactBlock />} 
