@@ -1,6 +1,8 @@
 // FRONTEND PAGE BLOCK DESIGN (TO INTERACT WITH CLOUD DATA)
 // ALL DEPENDENCIES INCLUDE "react react-dom react-router-dom @apollo/client"
-// START BY RUNNING COMMAND "npm init -y"
+// STAY IN THE START BY RUNNING COMMAND "npx create-react-app <react project folder name (i.e reactscript)>" as https://create-react-app.dev/docs/getting-started#quick-start
+// COULD REMOVE SOME DEPENDENCIES BY COMMAND "npm uninstall web-vitals @testing-library/user-event @testing-library/react @testing-library/jest-dom"
+// ALTERNATIVELY SCHEME THE FOLDER WITH PROVIDED TEMPLATES BY RUNNING COMMAND "npx create-react-app <project name> --template cra-template" https://create-react-app.dev/docs/custom-templates/
 
 // 1-IMPORT FRAMEWORK(FUNCTIONS AND MODELS) OF REACT
 // RUN COMMAND "npm i react react-dom"
