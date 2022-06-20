@@ -15,27 +15,19 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     
     <title>Name of tab</title>
+    <!-- Prevent advertising warning from showing up: "__DEV__" issue solved by https://github.com/apollographql/apollo-client/issues/8674 -->
+    <script> this['__DEV__'] = false </script>
   </head>
   <body>
-    <div>
+    <div class="text-center">
       <p>Some Content</p>
     </div>
-    <div>
+    <div class="typical-block">
       <p>Reactive Component in index.html</p>
       <div id="locator"></div>
     </div>
-    <div>
+    <div class="text-center">
       <p>Other content</p> 
     </div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

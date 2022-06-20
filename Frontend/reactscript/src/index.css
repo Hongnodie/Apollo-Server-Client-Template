@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.typical-block {
+  /* Text center */
+  text-align: center;
+  width: 30vw;
+  border: .2em solid;
+  padding: .5em;
+  /* Block center */
+  margin: 0 auto
+}
+
+.react-block {
+  border: .1em solid;
+}
+
+p {
+  margin: 0 auto;
+  text-align: center
+}

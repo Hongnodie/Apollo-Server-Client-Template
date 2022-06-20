@@ -132,8 +132,8 @@ const startApolloServer = async () => {
     await server.start();
     server.applyMiddleware({ app });
 
-    // Setup the opening gate (define that by default 3001)
-    const PORT = process.env.PORT || 3001;
+    // Setup the opening gate (define that by default 5000)
+    const PORT = process.env.PORT || 5000;
     // if no need for seeding in 2.2.3, mongoDB connection is put here and wrap the below like this: .then(()=>{app.listen(...)}) 
     // Activate the service "listen" to the request should be the last step
     app.listen(PORT, () => {
