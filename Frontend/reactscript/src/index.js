@@ -16,7 +16,9 @@ import { useQuery, gql } from '@apollo/client';
 // Import for 2.3
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import OtherRouteBlock from './pageblock/block1/OtherRouteBlock';
+import OtherRouteBlock from './pageblock/block1-templated/OtherRouteBlock';
+import MutationBlock from './pageblock/block2-mutation/MutationBlock';
+import QueryMutationBlock from './pageblock/block3-querymutation/QueryMutationBlock';
 
 // 2-DEFINE THE ROUTING (BLOCKS IN BLOCK)
 // Guide here https://v5.reactrouter.com/web/guides/quick-start
@@ -39,7 +41,8 @@ const UserInfoQuery = gql`
       selfid
       username
     }
-  }`
+  }
+`
 // 2.2.2-Build this block
 function UnitReactBlock() {
     const { loading, error, data } = useQuery(UserInfoQuery);
@@ -54,11 +57,13 @@ function UnitReactBlock() {
         {data.allUser.map(({ selfid, username }) => {
           return (
               <div key={selfid}> 
-                <span> {username} selfid: {selfid} </span> 
+                <span> {selfid} 's {username}  </span> 
               </div>
           )})
         }
-        <a href='/other'>To /other route</a>
+        <div><a href='/other'>To /other route</a></div>
+        <div><a href='/mutation'>To /mutation route</a></div>
+        <div><a href='/querymutation'>To /query&mutation route</a></div>
       </div>
     )
 }
@@ -79,6 +84,14 @@ function App() {
                 <Route 
                 path="/other" 
                 element={<OtherRouteBlock />} 
+                />
+                <Route 
+                path="/mutation" 
+                element={<MutationBlock />} 
+                />
+                <Route 
+                path="/querymutation" 
+                element={<QueryMutationBlock />} 
                 />
             </Routes>
         </BrowserRouter>
