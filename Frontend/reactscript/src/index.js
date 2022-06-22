@@ -49,7 +49,7 @@ function UnitReactBlock() {
     // console.log(data);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error</p>;
-    
+ 
     // return <div>This did work</div>
     return (
       <div className="react-block">
