@@ -1,18 +1,13 @@
 import { useQuery, useMutation, gql } from '@apollo/client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Example at https://www.apollographql.com/docs/react/data/mutations/
 function QueryMutationBlock() {
-  
-  // Since both useQuery and useMutation can reutrn "data", and we can't define two data at the same time, Refetch or Polling or Subscription should work
-  // See explaination at https://www.apollographql.com/docs/react/data/queries/#updating-cached-query-results
-  
-  // Init the key bridging variable between input and cloud DB response, and also shoulders the display-value responsibility
+
   // Define gql statement (copy and paste from apollo)
   const GetUserSelfidQuery = gql`
   query Query {
     allUser {
-      _id
       selfid
       username
     }
@@ -26,90 +21,94 @@ function QueryMutationBlock() {
     }
   }
   `
-
-  const { data } = useQuery(GetUserSelfidQuery);
+  
+  // Since both useQuery and useMutation can reutrn "data", and we can't define two data at the same time, Refetch or Polling or Subscription should work
+  // See explaination at https://www.apollographql.com/docs/react/data/queries/#updating-cached-query-results
+  let { loading, data, refetch } = useQuery(GetUserSelfidQuery);
   // console.log(data);
 
-  // const [idNameCombo, setidNameCombo] = useState({data});
+  // Init the key bridging variable between input and cloud DB response, and also shoulders the display-value responsibility
+  const [idNameCombo, setidNameCombo] = useState({});
+
+  // Check how the variable changes by using useEffect
+  useEffect(() => {
+    console.log(`idNameCombo changed to ${JSON.stringify(idNameCombo)}`);
+    console.log(`${typeof(JSON.stringify(idNameCombo))}`)
+  }, [idNameCombo]);
 
   // const getCurrentCloudData = () => {
   //   let suerData = data.allUser;
   //   setidNameCombo({ ...suerData });
-  //   console.log(idNameCombo);
   // };
   
-  // Put selfid to the idNameCombo.selfid variable
-  // const handleSelectChange = (event) => {
-  //   // As parsed through <option>
-  //   const { value } = event.target;
-  //   setidNameCombo({ ...idNameCombo, selfid: value });
-  // };
+  // Put selfid to the idNameCombo.selfid variable, make sure it's async
+  const handleSelectChange = async (event) => {
+    // console.log(event.target.value);
+    event.preventDefault();
+    // As parsed through <option>
+    setidNameCombo({...idNameCombo, selfid: event.target.value });
+    // console.log should return the previous value due to delay, explanation check here https://stackoverflow.com/a/55983132
+    // console.log(idNameCombo);
+  };
 
-  // const [changeUsername, {}] = useMutation(ChangeUsernameMutation);
+  const handleInputChange = async (event) => {
+    event.preventDefault();
+    // console.log(event.target.value);
+    setidNameCombo({...idNameCombo, newUsername: event.target.value });
+    // console.log(idNameCombo);
+  }
 
-  // const handleFormSubmit = async (event) => {
-  //     // Prevent the content from deminish after submitted
-  //     event.preventDefault();
+  const [changeUsername, {error}] = useMutation(ChangeUsernameMutation);
 
-  //     setidNameCombo({ ...idNameCombo, username: this.input.value });
-  //     try {
-  //         const { data } = await changeUsername({ variables: { 
-  //           ...idNameCombo
-  //         }, });
-  //         setidNameCombo({
-  //           selfid: data.selfid,
-  //           username: data.selfid
-  //         })
-  //       } catch (err) {
-  //         console.error(err);
-  //       }
-  // }
-  // onSubmit={handleFormSubmit}
-  // onChange={handleSelectChange}
-    return (
-        <div>
-          <form>
+  let input;
+
+  const handleFormSubmit = async (event) => {
+    // Prevent the content from deminish after submitted
+    event.preventDefault();
+
+    console.log(idNameCombo);
+    try {
+        let { data } = await changeUsername({ variables: {...idNameCombo},});
+
+        // Alternatively use below context
+        // let { data } = await changeUsername({ variables: {
+        //   // selfid: "idforuser2",
+        //   // newUsername: "user2new",
+        //   selfid: idNameCombo.selfid,
+        //   newUsername:  idNameCombo.newusername,         
+        // }
+        // });
+
+        // Update the select options by refetch again
+        // Tutorial here https://www.apollographql.com/docs/react/v2/data/queries/#refetching
+        refetch();
+      } catch (err) {
+        console.error(err);
+      }
+  }
+
+  return (
+      <div>
+        {loading? (<p>Loading in progress</p>) : (
+          <form onSubmit={handleFormSubmit}>
           <label>Select user by current username: </label>
-          <select>
+          <select onChange={handleSelectChange}>
             {data.allUser.map(({ selfid, username }) => {
-                      return (
-                          <option key={selfid} value={selfid}> 
-                            <span> {selfid} 's {username}  </span> 
-                          </option>
-                      )})
-                    }
+              return (
+                  <option key={selfid} value={selfid}> 
+                    id ({selfid}) - username ({username}) 
+                  </option>
+              )})
+            }
           </select>
-          <input type="text" placeholder='new username' />
+          {/* assign the node reference to the input variable */}
+          <input type="text" placeholder='new username' ref={node => { input = node; }} onChange={handleInputChange} />
           <div><button type="submit"> Change now! </button></div>
           </form>
-
-            {/* <form>
-              <label>Select user by current username: </label>
-              <select name="username">
-                  {data.allUser.map(({ selfid, username }) => {
-                      return (
-                      <option key={selfid} value={selfid}>
-                          {username}
-                      </option>
-                      );
-                  })}
-              </select>
-              <input type="text" placeholder='new username' />
-              <button type="submit"> Change now! </button>
-            </form> */}
-            {/* <div>
-              <button onClick={getCurrentCloudData}>Check current cloud value</button>
-              {idNameCombo.map((user) => {
-                return (
-                  <div key={user.selfid}> 
-                    <span> {user.selfid} (id) 's {user.username} (username) </span> 
-                  </div>
-                )
-              })}
-            </div> */}
-            <div><a href='/'>Back to main</a></div>
-        </div>
-    )
+        )}
+          <div><a href='/'>Back and check on main</a></div>
+      </div>
+  )
 }
 
 export default QueryMutationBlock;
