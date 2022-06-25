@@ -1,4 +1,4 @@
-  # Apollo-Server-Express-Template (MongoDB & Express & React)
+  # React-Apollo-Express Template (MongoDB & Express & React)
 
   <strong>Frontend: React & Backend: Apollo & Express & Database: MongoDB</strong>
 
@@ -21,22 +21,10 @@
   ##  Backend
   ### Backend-Screenshot
 
-  [Check out the content](https://github.com/Hongnodie/Apollo-Server-Client-Template/tree/MongoDB-Cloud-%26-Express-(npm))
+  [Check out the content](https://github.com/Hongnodie/Apollo-Server-Client-Template/tree/React-MongoDB-Express)
 
   <p align="center">
-    <img src="./Readme/Express-change1.png" width="100%">
-  </p>
-
-  <p align="center">
-    <img src="./Readme/Express-change2.png" width="100%">
-  </p>
-
-  <p align="center">
-    <img src="./Readme/Express-work1.png" width="100%">
-  </p>
-
-  <p align="center">
-    <img src="./Readme/Express-work2-mutation.png" width="100%">
+    <img src="./Readme/React-Backend1.png" width="100%">
   </p>
   
   [See basic apollo code package at Github](https://github.com/Hongnodie/Apollo-Server-Client-Template.git)
@@ -45,21 +33,28 @@
   ### Frontend-Screenshot
 
   <p align="center">
-    <img src="./Readme/Express-change1.png" width="100%">
+    <img src="./Readme/React-Frontend1.png" width="100%">
+  </p>
+
+  <p align="center">
+    <img src="./Readme/React-Frontend2.png" width="100%">
   </p>
 
   ### Installation
 
   As for Backend <br>
 
-  All necessary code are in a single file: "Backend" Folder "index.js" file [Go to index.js](https://github.com/Hongnodie/Apollo-Server-Client-Template/blob/MongoDB-Cloud-%26-Express-(npm)/Backend/index.js)
+  All necessary code are in a single file: "Backend" Folder "index.js" file [Go to index.js](https://github.com/Hongnodie/Apollo-Server-Client-Template/tree/React-MongoDB-Express/Backend/index.js)
 
   All commands to run for backend (in the terminal) (or alias "Shell") are summed up here
   ```
-  npm install apollo-server-express graphql mongoose express
+  npm install graphql mongoose express apollo-server-express
   node index.js
   ```
 
+  As for Frontend <br>
+
+  All necessary code displayed in two forms: built-in index or export default to index.js [Go to frontend folder](https://github.com/Hongnodie/Apollo-Server-Client-Template/tree/React-MongoDB-Express/Frontend/reactscript)
 
   ### Guidebook
 
