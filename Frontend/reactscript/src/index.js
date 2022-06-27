@@ -53,6 +53,7 @@ function UnitReactBlock() {
     // return <div>This did work</div>
     return (
       <div className="react-block">
+        {/* {console.log(document.title)} */}
         <p>There are {data.allUser.length} users</p>
         {data.allUser.map(({ selfid, username }) => {
           return (

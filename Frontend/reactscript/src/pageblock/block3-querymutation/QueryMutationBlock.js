@@ -32,8 +32,8 @@ function QueryMutationBlock() {
 
   // Check how the variable changes by using useEffect
   useEffect(() => {
-    console.log(`idNameCombo changed to ${JSON.stringify(idNameCombo)}`);
-    console.log(`${typeof(JSON.stringify(idNameCombo))}`)
+    // console.log(`idNameCombo changed to ${JSON.stringify(idNameCombo)}`);
+    // console.log(`${typeof(JSON.stringify(idNameCombo))}`)
   }, [idNameCombo]);
 
   // const getCurrentCloudData = () => {
@@ -66,7 +66,8 @@ function QueryMutationBlock() {
     // Prevent the content from deminish after submitted
     event.preventDefault();
 
-    console.log(idNameCombo);
+    // TODO: ADD IF NOT EXIST TWO VARIABLE, READ DEFAULT VALUE
+    // console.log(idNameCombo);
     try {
         let { data } = await changeUsername({ variables: {...idNameCombo},});
 
@@ -102,7 +103,7 @@ function QueryMutationBlock() {
             }
           </select>
           {/* assign the node reference to the input variable */}
-          <input type="text" placeholder='new username' ref={node => { input = node; }} onChange={handleInputChange} />
+          <input type="text" placeholder='new username' ref={ node => { input = node; }} onChange={handleInputChange} />
           <div><button type="submit"> Change now! </button></div>
           </form>
         )}
