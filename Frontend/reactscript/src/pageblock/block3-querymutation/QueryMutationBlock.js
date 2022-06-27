@@ -35,11 +35,6 @@ function QueryMutationBlock() {
     // console.log(`idNameCombo changed to ${JSON.stringify(idNameCombo)}`);
     // console.log(`${typeof(JSON.stringify(idNameCombo))}`)
   }, [idNameCombo]);
-
-  // const getCurrentCloudData = () => {
-  //   let suerData = data.allUser;
-  //   setidNameCombo({ ...suerData });
-  // };
   
   // Put selfid to the idNameCombo.selfid variable, make sure it's async
   const handleSelectChange = async (event) => {

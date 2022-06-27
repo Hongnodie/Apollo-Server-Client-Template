@@ -15,10 +15,14 @@ import './index.css';
 import { useQuery, gql } from '@apollo/client';
 // Import for 2.3
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// Import for 3 (redux)
+import { Provider } from 'react-redux';
+import store from './reduxsystem/reduxsystem';
 
 import OtherRouteBlock from './pageblock/block1-templated/OtherRouteBlock';
 import MutationBlock from './pageblock/block2-mutation/MutationBlock';
 import QueryMutationBlock from './pageblock/block3-querymutation/QueryMutationBlock';
+import ChangeStateBlock from './pageblock/block4-reduxonstate/ChangeStateBlock';
 
 // 2-DEFINE THE ROUTING (BLOCKS IN BLOCK)
 // Guide here https://v5.reactrouter.com/web/guides/quick-start
@@ -65,6 +69,7 @@ function UnitReactBlock() {
         <div><a href='/other'>To /other route</a></div>
         <div><a href='/mutation'>To /mutation route</a></div>
         <div><a href='/querymutation'>To /query&mutation route</a></div>
+        <div><a href='/reduxonstate'>To /reduxedstate route</a></div>
       </div>
     )
 }
@@ -94,17 +99,27 @@ function App() {
                 path="/querymutation" 
                 element={<QueryMutationBlock />} 
                 />
+                <Route 
+                path="/reduxonstate" 
+                element={<ChangeStateBlock />} 
+                />
             </Routes>
         </BrowserRouter>
       </ApolloProvider>
     );
 }
 
-// 3-START REACT - A ASYNC WATERFLOW TO PARSE SOME VARIABLES AS PROPERTIES
+// Check how to wrap react here https://www.reactjstutorials.com/react-redux/15/redux-actions-reducers-store
+// import { Provider } from 'react-redux';
+// import store from './reduxsystem/reduxsystem';
+
+// 4-START REACT - A ASYNC WATERFLOW TO PARSE SOME VARIABLES AS PROPERTIES
 // strict-mode provides additional debugger, detail here https://reactjs.org/docs/strict-mode.html
 const root = ReactDOM.createRoot(document.getElementById('locator'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );

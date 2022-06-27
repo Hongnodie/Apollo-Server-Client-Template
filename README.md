@@ -58,7 +58,7 @@
 
   All commands to run for frontend (in the terminal) (or alias "Shell") are summed up here (terminal direct to the index.js in frontend folder i.e. /Frontend/reactscript/src)
   ```
-  npm install react react-dom react-router-dom @apollo/client react-scripts 
+  npm install react react-dom react-router-dom @apollo/client react-scripts react-redux @reduxjs/toolkit 
   npm start
   ```
 
