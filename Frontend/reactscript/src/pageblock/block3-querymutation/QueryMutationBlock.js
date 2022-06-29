@@ -1,25 +1,26 @@
 import { useQuery, useMutation, gql } from '@apollo/client';
 import { useState, useEffect } from 'react';
 
+// This function must be named with the first letter upperclass
 // Example at https://www.apollographql.com/docs/react/data/mutations/
 function QueryMutationBlock() {
 
   // Define gql statement (copy and paste from apollo)
   const GetUserSelfidQuery = gql`
-  query Query {
-    allUser {
-      selfid
-      username
+    query Query {
+      allUser {
+        selfid
+        username
+      }
     }
-  }
   `
   const ChangeUsernameMutation = gql`
-  mutation Mutation($selfid: String!, $newUsername: String!) {
-    changeUsernameBySelfid(selfid: $selfid, newUsername: $newUsername) {
-      selfid
-      username
+    mutation Mutation($selfid: String!, $newUsername: String!) {
+      changeUsernameBySelfid(selfid: $selfid, newUsername: $newUsername) {
+        selfid
+        username
+      }
     }
-  }
   `
   
   // Since both useQuery and useMutation can reutrn "data", and we can't define two data at the same time, Refetch or Polling or Subscription should work
