@@ -29,12 +29,40 @@ export default function ChangeStateBlock() {
             >
               Add This User
             </button>
+        </div><br/>
+        <div>
+            Choose a user to delete:
+            <select id='selectSection'>
+            {state.users.users.map((user) => {
+              return (
+                  <option key={user.selfid}> 
+                    id ({user.selfid}) - username ({user.username}) 
+                  </option>
+              )})
+            }
+            </select>
+            <button
+              onClick={async () => {
+                // console.log(state);
+                const index = await document.getElementById("selectSection").selectedIndex;
+                // console.log(index);
+                const userByIndex = state.users.users[index];
+                // console.log(userByIndex);
+                stateParser({ 
+                    type: "deleteUserByName", 
+                    variables: { username: userByIndex.username }, 
+                    })
+                } }
+            >
+              Delete This User
+            </button>
         </div>
         <div>
             {/* {console.log(state.users.users[0].selfid)} */}
             <h3>Current id - username list</h3>
             {state.users.users.map((user) => { return (
-                <div key={user.selfid}>
+                // Should be noted here that the key here should be different from the above since that are on the same page
+                <div key={user.username}>
                     id ({user.selfid}) - username ({user.username})
                 </div>
                 )

@@ -1,6 +1,10 @@
-  # React-Apollo-Express Template (MongoDB & Express & React)
+  # React-Redux-Apollo-Express Template (MongoDB & Express & React & Redux)
 
-  <strong>Frontend: React & Backend: Apollo & Express & Database: MongoDB</strong>
+  <strong>
+  Frontend: React & Redux ; 
+  Backend: Apollo & Express ; 
+  Database: MongoDB
+  </strong>
 
   ## Table of Contents
 
@@ -33,18 +37,14 @@
   ### Frontend-Screenshot
 
   <p align="center">
-    <img src="./Readme/React-Frontend1.png" width="100%">
-  </p>
-
-  <p align="center">
-    <img src="./Readme/React-Frontend2.png" width="100%">
+    <img src="./Readme/Redux-Frontend1.png" width="100%">
   </p>
 
   ### Installation
 
   As for Backend <br>
 
-  All necessary code are in a single file: "Backend" Folder "index.js" file [Go to index.js](https://github.com/Hongnodie/Apollo-Server-Client-Template/tree/React-MongoDB-Express/Backend/index.js)
+  All necessary code are in a single file: "Backend" Folder "index.js" file [Go to index.js]()
 
   All commands to run for backend (in the terminal) (or alias "Shell") are summed up here
   ```
@@ -62,7 +62,7 @@
   npm start
   ```
 
-  (This should take around a minute to start and automatically open the browser on my desktop)
+  (This should take around 2 minutes to start and automatically open the browser on my desktop)
   ### Guidebook
 
   <details>

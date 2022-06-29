@@ -3,8 +3,8 @@
 // Import for 3.3
 import { configureStore } from '@reduxjs/toolkit'
 
-// 3.1-Redux Processing Unit (RPU) definition (So-called "reducer") build up
-// 3.1.1-Init(or "seed") the CPU (could also be done lastly, but we usually put it on top)
+// 3.1-Init some value
+// Init(or "seed") the CPU (could also be done lastly, but we usually put it on top)
 const initalValue = {
     users: [
       {
@@ -20,7 +20,8 @@ const initalValue = {
     ]
 }
 
-// In official documentation, RPU is named as "reducer", parsedHeader is named as "action", parsedHeader.action is called "action.type", parsedHeader.variables is called "action.payload" (unfortunately, we have to stick to the name "type")
+// 3.2-Redux Processing Unit (RPU) definition (So-called "reducer")
+// In official documentation, RPU is named as "reducer", parsedHeader is named as "action", parsedHeader.action is called "action.type" (unfortunately, we have to stick to the name "type" due to source code-it would require and check only xxx.type), parsedHeader.variables is called "action.payload" 
 function UserRPU(state = initalValue, parsedHeader) {
     switch (parsedHeader.type) {
         case "addUser": {
@@ -32,6 +33,7 @@ function UserRPU(state = initalValue, parsedHeader) {
             // console.log(newUserId);
             const newUser = { ...parsedHeader.variables, selfid: newUserId };
 
+            // Return all other state if exists and update the "users" state
             return {
                 ...state,
                 users: [...state.users, newUser],
@@ -39,11 +41,14 @@ function UserRPU(state = initalValue, parsedHeader) {
         }
         case "deleteUserByName": {
             // Here constrainst that variables should contain and only contain the username of the user to be deleted
-            const userIndex = state.users.findIndex((user) => user.username === parsedHeader.variables);
+            // console.log(parsedHeader);
+            const userIndex = state.users.findIndex((user) => user.username === parsedHeader.variables.username);
+            // console.log(userIndex);
+            // console.log(parsedHeader.variables);
             
             // Delete the first found result
             const emptiedUserArrayByIndex = [...state.users];
-            emptiedUserArrayByIndex[userIndex] = {};
+            emptiedUserArrayByIndex.splice(userIndex,1);
 
             return {
                 ...state,
@@ -57,7 +62,7 @@ function UserRPU(state = initalValue, parsedHeader) {
     }
 }
 
-// 3.3
+// 3.3-Finalize the set-up of store
 // Check out example at https://redux.js.org/introduction/why-rtk-is-redux-today
 // import { configureStore } from '@reduxjs/toolkit'
 
