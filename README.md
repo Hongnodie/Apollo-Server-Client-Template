@@ -37,7 +37,7 @@
   ### Frontend-Screenshot
 
   <p align="center">
-    <img src="./Readme/Redux-Frontend1.png" width="100%">
+    <img src="./Readme/Redux-Frontend1.png">
   </p>
 
   ### Installation
