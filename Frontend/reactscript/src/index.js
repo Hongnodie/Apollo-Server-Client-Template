@@ -123,3 +123,5 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
+
+// RUN COMMAND "npm start" to utilize the frontend

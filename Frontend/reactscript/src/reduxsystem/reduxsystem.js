@@ -25,7 +25,7 @@ const initalValue = {
 // In official documentation, RPU is named as "reducer", parsedHeader is named as "action", parsedHeader.action is called "action.type" (unfortunately, we have to stick to the name "type" due to source code-it would require and check only xxx.type), parsedHeader.variables is called "action.payload"
 // This one can't be async
 function UserRPU(state = initalValue, parsedHeader) {
-    console.log(state);
+    // console.log(state);
     switch (parsedHeader.type) {
         case "addUser": {
             // Define what is the expected surgery on the state when a sepcific action is parsed from header
@@ -48,14 +48,17 @@ function UserRPU(state = initalValue, parsedHeader) {
         case "deleteUserByName": {
             // Here constrainst that variables should contain and only contain the username of the user to be deleted
             // console.log(parsedHeader);
+
+            // Get the index of first found result
             const userIndex = state.users.findIndex((user) => user.username === parsedHeader.variables.username);
             // console.log(userIndex);
-            // console.log(parsedHeader.variables);
 
-            // Delete the first found result
+            // Build up the bridging variable 
             const emptiedUserArrayByIndex = [...state.users];
+            // Delete the specific object from the array
             emptiedUserArrayByIndex.splice(userIndex,1);
 
+            // Re-define the array with/as the bridging variable
             return {
                 ...state,
                 users: emptiedUserArrayByIndex,

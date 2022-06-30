@@ -42,9 +42,15 @@
 
   ### Installation
 
-  As for Backend <br>
+  This app need both frontend and backend running in ternimal to funtion properly, the screenshot is provided below:
 
-  All necessary code are in a single file: "Backend" Folder "index.js" file [Go to index.js]()
+  <p align="center">
+    <img src="./Readme/Redux-Terminal.png" width="100%">
+  </p>
+
+  <strong> As for Backend </strong><br>
+
+  All necessary code are in a single file: "Backend" Folder "index.js" file [Go to index.js(Backend)](https://github.com/Hongnodie/Apollo-Server-Client-Template/blob/Redux-React-Apollo-Express/Backend/index.js)
 
   All commands to run for backend (in the terminal) (or alias "Shell") are summed up here
   ```
@@ -52,9 +58,9 @@
   node index.js
   ```
 
-  As for Frontend <br>
+  <strong> As for Frontend </strong><br>
 
-  All necessary code displayed in two forms: built-in index or export default to index.js [Go to frontend folder](https://github.com/Hongnodie/Apollo-Server-Client-Template/tree/React-MongoDB-Express/Frontend/reactscript)
+  All necessary code displayed in two forms: built-in index or export default to index.js [Go to frontend folder](https://github.com/Hongnodie/Apollo-Server-Client-Template/tree/Redux-React-Apollo-Express/Frontend/reactscript)
 
   All commands to run for frontend (in the terminal) (or alias "Shell") are summed up here (terminal direct to the index.js in frontend folder i.e. /Frontend/reactscript/src)
   ```
@@ -78,6 +84,18 @@
   Mongoose npm package-(https://mongoosejs.com/docs/index.html) - the tool to utilize mongoDB cloud server
 
   Quick start for express-(http://expressjs.com/en/starter/hello-world.html) - All basic component you need to know are well confined here
+
+  </details>
+
+  <details>
+  <summary>Some deprecation warning solution</summary>
+  <br>
+
+  ```
+  (node:6492) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+  (Use `node --trace-deprecation ...` to show where the warning was created)
+  (node:6492) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+  ```
 
   </details>
 
