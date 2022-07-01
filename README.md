@@ -106,6 +106,19 @@
   Component sample list-(https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md)
 
   </details>
+
+  <details>
+  <summary>Package Size Elimination</summary>
+  <br>
+  Node_modules of Frontend
+
+  Npm cache (150MB) - Check why it's so big here(https://stackoverflow.com/questions/64234215/node-modules-size)
+
+  @jest (3MB) - If not testing, just uninstall it (https://jestjs.io/docs/getting-started)
+
+  ajv (5MB) - JSON validator for node.js (https://www.npmjs.com/package/ajv)
+  
+  </details>
   
   ### License
   <details>
