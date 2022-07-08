@@ -1,11 +1,12 @@
 // FRONTEND PAGE BLOCK DESIGN (TO INTERACT WITH CLOUD DATA)
+// Open Terminate as of reactscript (.../reactscript)
 // ALL DEPENDENCIES INCLUDE "react react-dom react-router-dom @apollo/client react-scripts react-redux @reduxjs/toolkit"
 // STAY IN THE START BY RUNNING COMMAND "npx create-react-app <react project folder name (i.e reactscript)>" as https://create-react-app.dev/docs/getting-started#quick-start
 // COULD REMOVE SOME DEPENDENCIES BY COMMAND "npm uninstall web-vitals @testing-library/user-event @testing-library/react @testing-library/jest-dom"
 // ALTERNATIVELY SCHEME THE FOLDER WITH PROVIDED TEMPLATES BY RUNNING COMMAND "npx create-react-app <project name> --template cra-template" https://create-react-app.dev/docs/custom-templates/
 
 // 1-IMPORT FRAMEWORK(FUNCTIONS AND MODELS) OF REACT
-// RUN COMMAND "npm i react react-dom"
+// RUN COMMAND "npm i react react-dom react-router-dom @apollo/client"
 // Built based on examples (here adopt the "counter-app") from https://reactjs.org/community/examples.html
 import React from 'react';
 import ReactDOM from 'react-dom/client';

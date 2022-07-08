@@ -63,7 +63,7 @@
 
   All necessary code displayed in two forms: built-in index or export default to index.js [Go to frontend folder](https://github.com/Hongnodie/Apollo-Server-Client-Template/tree/Redux-React-Apollo-Express/Frontend/reactscript)
 
-  All commands to run for frontend (in the terminal) (or alias "Shell") are summed up here (terminal direct to the index.js in frontend folder i.e. /Frontend/reactscript/src)
+  All commands to run for frontend (in the terminal) (or alias "Shell") are summed up here (terminal direct to the index.js in frontend folder i.e. /Frontend/reactscript)
   ```
   npm init -y
   npm install react react-dom react-router-dom @apollo/client react-scripts react-redux @reduxjs/toolkit 
