@@ -54,6 +54,7 @@
 
   All commands to run for backend (in the terminal) (or alias "Shell") are summed up here
   ```
+  npm init -y
   npm install graphql mongoose express apollo-server-express
   node index.js
   ```
@@ -64,6 +65,7 @@
 
   All commands to run for frontend (in the terminal) (or alias "Shell") are summed up here (terminal direct to the index.js in frontend folder i.e. /Frontend/reactscript/src)
   ```
+  npm init -y
   npm install react react-dom react-router-dom @apollo/client react-scripts react-redux @reduxjs/toolkit 
   npm start
   ```
