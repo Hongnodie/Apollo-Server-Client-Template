@@ -44,10 +44,6 @@
 
   This app need both frontend and backend running in ternimal to funtion properly, the screenshot is provided below:
 
-  <p align="center">
-    <img src="./Readme/Redux-Terminal.png" width="100%">
-  </p>
-
   <strong> As for Backend </strong><br>
 
   All necessary code are in a single file: "Backend" Folder "index.js" file [Go to index.js(Backend)](https://github.com/Hongnodie/Apollo-Server-Client-Template/blob/Redux-React-Apollo-Express/Backend/index.js)
@@ -59,6 +55,10 @@
   node index.js
   ```
 
+  <p align="center">
+    <img src="./Readme/Redux-Terminal.png" width="100%">
+  </p>
+
   <strong> As for Frontend </strong><br>
 
   All necessary code displayed in two forms: built-in index or export default to index.js [Go to frontend folder](https://github.com/Hongnodie/Apollo-Server-Client-Template/tree/Redux-React-Apollo-Express/Frontend/reactscript)
@@ -68,6 +68,15 @@
   npm init -y
   npm install react react-dom react-router-dom @apollo/client react-scripts react-redux @reduxjs/toolkit 
   npm start
+  ```
+
+  Need to add script to "package.json"
+  <p align="center">
+    <img src="./Readme/Redux-Terminal-2.png">
+  </p>
+  Copy and paste here (under "scripts")
+  ```
+  "start": "react-scripts start",
   ```
 
   (This should take around 2 minutes to start and automatically open the browser on my desktop)
