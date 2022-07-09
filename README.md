@@ -66,18 +66,18 @@
   All commands to run for frontend (in the terminal) (or alias "Shell") are summed up here (terminal direct to the index.js in frontend folder i.e. /Frontend/reactscript)
   ```
   npm init -y
-  npm install react react-dom react-router-dom @apollo/client react-scripts react-redux @reduxjs/toolkit 
+  npm install react react-dom react-router-dom @apollo/client react-scripts react-redux @reduxjs/toolkit
+  (add "start": "react-scripts start" in "scripts")
   npm start
   ```
 
-  Need to add script to "package.json"
+  Need to add scripts to "package.json". Copy and paste here (under "scripts"): <br>
+
+  "start": "react-scripts start",
+
   <p align="center">
     <img src="./Readme/Redux-Terminal-2.png">
   </p>
-  Copy and paste here (under "scripts")
-  ```
-  "start": "react-scripts start",
-  ```
 
   (This should take around 2 minutes to start and automatically open the browser on my desktop)
   ### Guidebook
